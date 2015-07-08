@@ -120,6 +120,9 @@ if (typeof angular !== "undefined") {
             postJson: function(url, json, headers) {
                 return makePromise(http.postJson, [url, json, headers], true);
             },
+            postJsonArray: function(url, json, headers) {
+                return makePromise(http.postJsonArray, [url, json, headers], true);
+            },
             get: function(url, params, headers) {
                 return makePromise(http.get, [url, params, headers], true);
             },
