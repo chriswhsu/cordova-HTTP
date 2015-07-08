@@ -1,18 +1,22 @@
 /**
  * A HTTP plugin for Cordova / Phonegap
  */
+package com.synconset;
 
-import com.github.kevinsawicki.http.HttpRequest;
-import com.github.kevinsawicki.http.HttpRequest.HttpRequestException;
+import java.net.UnknownHostException;
+import java.util.Map;
+
 import org.apache.cordova.CallbackContext;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONArray;
 
 import javax.net.ssl.SSLHandshakeException;
-import java.net.UnknownHostException;
-import java.util.Map;
 
+import android.util.Log;
+
+import com.github.kevinsawicki.http.HttpRequest;
+import com.github.kevinsawicki.http.HttpRequest.HttpRequestException;
 public class CordovaHttpPostJsonArray extends CordovaHttp implements Runnable {
 
     public CordovaHttpPostJsonArray(String urlString, JSONArray jsonArray, Map<String, String> headers, CallbackContext callbackContext) {
