@@ -7,7 +7,6 @@ import org.apache.cordova.CallbackContext;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONArray;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +39,7 @@ public abstract class CordovaHttp {
     private String urlString;
     private Map<?, ?> params;
     private JSONObject jsonObject;
-    private JSONArray jsonArray;
+    private String jsonString;
     private Map<String, String> headers;
     private CallbackContext callbackContext;
 
@@ -51,9 +50,9 @@ public abstract class CordovaHttp {
         this.callbackContext = callbackContext;
     }
 
-    public CordovaHttp(String blah, String urlString, JSONArray jsonArray, Map<String, String> headers, CallbackContext callbackContext) {
+    public CordovaHttp(String blah, String urlString, String jsonString, Map<String, String> headers, CallbackContext callbackContext) {
         this.urlString = urlString;
-        this.jsonArray = jsonArray;
+        this.jsonString = jsonString;
         this.headers = headers;
         this.callbackContext = callbackContext;
     }
@@ -91,8 +90,8 @@ public abstract class CordovaHttp {
         return this.jsonObject;
     }
 
-    protected JSONArray getJsonArray() {
-        return this.jsonArray;
+    protected String getJsonString() {
+        return this.jsonString;
     }
 
     protected Map<String, String> getHeaders() {

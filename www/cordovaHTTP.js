@@ -25,8 +25,8 @@ var http = {
     postJson: function(url, json, headers, success, failure) {
         return exec(success, failure, "CordovaHttpPlugin", "postJson", [url, json, headers]);
     },
-    postJsonArray: function(url, json, headers, success, failure) {
-        return exec(success, failure, "CordovaHttpPlugin", "postJsonArray", [url, json, headers]);
+    postJsonArray: function(url, string, headers, success, failure) {
+        return exec(success, failure, "CordovaHttpPlugin", "postJsonArray", [url, string, headers]);
     },
     get: function(url, params, headers, success, failure) {
         return exec(success, failure, "CordovaHttpPlugin", "get", [url, params, headers]);
