@@ -28,8 +28,8 @@ public class CordovaHttpPostJsonArray extends CordovaHttp implements Runnable {
             HttpRequest request = HttpRequest.post(this.getUrlString());
             this.setupSecurity(request);
             request.headers(this.getHeaders());
-            request.acceptJson();
-            request.contentType(HttpRequest.CONTENT_TYPE_JSON);
+//            request.acceptJson();
+//            request.contentType(HttpRequest.CONTENT_TYPE_JSON);
             request.send(getJsonString());
             int code = request.code();
             String body = request.body(CHARSET);
