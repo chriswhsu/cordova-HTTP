@@ -20,7 +20,7 @@ import com.github.kevinsawicki.http.HttpRequest.HttpRequestException;
 public class CordovaHttpPostJsonArray extends CordovaHttp implements Runnable {
 
     public CordovaHttpPostJsonArray(String urlString, JSONArray jsonArray, Map<String, String> headers, CallbackContext callbackContext) {
-        super(urlString, jsonArray, headers, callbackContext);
+        super("blah", urlString, jsonArray, headers, callbackContext);
     }
     
     @Override
