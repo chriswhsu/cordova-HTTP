@@ -1,26 +1,21 @@
 /**
  * A HTTP plugin for Cordova / Phonegap
  */
-package com.synconset;
-
-import java.net.UnknownHostException;
-import java.util.Map;
-
-import org.apache.cordova.CallbackContext;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONArray;
-
-import javax.net.ssl.SSLHandshakeException;
-
-import android.util.Log;
 
 import com.github.kevinsawicki.http.HttpRequest;
 import com.github.kevinsawicki.http.HttpRequest.HttpRequestException;
-public class CordovaHttpPostJsonArray extends CordovaHttp implements Runnable {
+import org.apache.cordova.CallbackContext;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    public CordovaHttpPostJsonArray(String urlString, JSONArray jsonArray, Map<String, String> headers, CallbackContext callbackContext) {
-        super(urlString, jsonArray, headers, callbackContext);
+import javax.net.ssl.SSLHandshakeException;
+import java.net.UnknownHostException;
+import java.util.Map;
+
+public class CordovaHttpPostJsonString extends CordovaHttp implements Runnable {
+
+    public CordovaHttpPostJsonString(String urlString, String jsonString, Map<String, String> headers, CallbackContext callbackContext) {
+        super(urlString, jsonString, headers, callbackContext);
     }
     
     @Override
@@ -31,7 +26,7 @@ public class CordovaHttpPostJsonArray extends CordovaHttp implements Runnable {
             request.headers(this.getHeaders());
             request.acceptJson();
             request.contentType(HttpRequest.CONTENT_TYPE_JSON);
-            request.send(getJsonArray().toString());
+            request.send(getJsonString());
             int code = request.code();
             String body = request.body(CHARSET);
             JSONObject response = new JSONObject();
